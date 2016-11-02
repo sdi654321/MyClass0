@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButton2Clicked(View v) {
-        person1.walk(30);
+        person1.walk(40);
     }
 
     public void onButton3Clicked(View v) {
