@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButton1Clicked(View v) {
         String name = editText2.getText().toString();
-        person1 = new person(name);
+        //person1 = new person(name);
+        person1 = new baby(name);
     }
 
     public void onButton2Clicked(View v) {
@@ -52,10 +54,20 @@ public class MainActivity extends AppCompatActivity {
 
         public void walk(int speed) {
             imageView.setImageResource(R.drawable.person_walk);
+            Toast.makeText(getApplicationContext(), name + "이(가) 걸어갑니다", Toast.LENGTH_LONG).show();
         }
 
         public void run(int speed) {
             imageView.setImageResource(R.drawable.person_run);
+            Toast.makeText(getApplicationContext(), name + "이(가) 뛰어갑니다", Toast.LENGTH_LONG).show();
+
+        }
+    }
+
+    class baby extends person{
+        public baby(String name){
+            super.name = name;
+            Toast.makeText(getApplicationContext(),"아기를 만들었어요.." + name, Toast.LENGTH_LONG).show();
         }
     }
 }
